@@ -1,3 +1,8 @@
+variable "docs_publish_role" {
+  type = string
+  description = "arn of aws iam role for doc publishing"
+}
+
 resource "github_repository" "website" {
   name        = "www.cloudcustodian.io"
   description = "project website"
@@ -16,7 +21,7 @@ resource "github_repository" "website" {
 resource "github_actions_secret" "publish_secret" {
   repository       = github_repository.website.name
   secret_name      = "DOC_PUBLISH_ROLE"
-  plaintext_value  = "arn:aws:iam::619193117841:role/ci-github-actions"
+  plaintext_value  = var.docs_publish_role
 }
 
 resource "github_branch_protection_v3" "website_main" {
@@ -29,8 +34,10 @@ resource "github_branch_protection_v3" "website_main" {
   
   required_status_checks {
     strict   = true
+    # this app id value has to be inferred manually
+    # post initial provisioning and reapplied.
     checks = [
-      "CI/Build"
+      "Build:15368"
     ]
   }
 }
