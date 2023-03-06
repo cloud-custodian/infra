@@ -1,7 +1,7 @@
 
 # Configure the GitHub Provider
 provider "github" {
-   owner = "cloud-custodian"
+  owner = "cloud-custodian"
 }
 
 terraform {
