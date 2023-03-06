@@ -2,7 +2,11 @@ resource "github_repository" "poetry_freeze" {
   name        = "poetry-plugin-freeze"
   description = "poetry plugin to freeze wheels"
   visibility  = "public"
-
+  topics = [
+    "poetry",
+    "poetry-plugin",
+    "poetry-python",
+  ]
   allow_merge_commit = false
   allow_rebase_merge = false
   allow_squash_merge = true
