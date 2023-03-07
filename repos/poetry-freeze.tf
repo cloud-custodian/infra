@@ -15,7 +15,7 @@ resource "github_repository" "poetry_freeze" {
   allow_merge_commit = false
   allow_rebase_merge = false
   allow_squash_merge = true
-
+  has_issues = true
   squash_merge_commit_title = "PR_TITLE"
   auto_init                 = true
   delete_branch_on_merge    = true
