@@ -34,7 +34,7 @@ resource "github_branch_protection_v3" "poetry_freeze" {
 
 
 resource "github_actions_secret" "publish_freeze_secret" {
-  repository      = github_repository.website.name
+  repository      = github_repository.poetry_freeze.name
   secret_name     = "PYPI_TOKEN"
   plaintext_value = var.freeze_release_token
 }
