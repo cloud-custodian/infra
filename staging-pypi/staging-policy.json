@@ -1,0 +1,21 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "codeartifact:DescribePackageVersion",
+        "codeartifact:DescribeRepository",
+        "codeartifact:GetPackageVersionReadme",
+        "codeartifact:GetRepositoryEndpoint",
+        "codeartifact:ListPackageVersionAssets",
+        "codeartifact:ListPackageVersionDependencies",
+        "codeartifact:ListPackageVersions",
+        "codeartifact:ListPackages",
+        "codeartifact:ReadFromRepository"
+      ],
+      "Effect": "Allow",
+      "Principal": "*",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}
