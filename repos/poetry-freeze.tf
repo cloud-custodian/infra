@@ -5,7 +5,7 @@ variable "freeze_release_token" {
 
 resource "github_repository" "poetry_freeze" {
   name        = "poetry-plugin-freeze"
-  description = "poetry plugin to freeze wheels"
+  description = "poetry plugin to freeze dependency versions in wheels"
   visibility  = "public"
   topics = [
     "poetry",
